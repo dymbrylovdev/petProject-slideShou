@@ -55,38 +55,35 @@ let s = 0;
 let k1 = 0
 let zi = 7
 
-function drive(j) {
-    if (j === 1) {
-
-    } else {
-        let ph = "p" + s
-        if (b === 1) {
-            if (s < 9) {
-                if (i === 1) {
-                    zi = 7
-                    i = 0
-                    window.setTimeout(drive, 20)
-                }else {
-                    if (k < 1000) {
-                        document.getElementById(ph).style.left = `${k}px`
-                        k += 10
-                        window.setTimeout(drive, 20)
-                    } else {
-                        k = 0
-                        document.getElementById(ph).style.zIndex = zi
-                        document.getElementById(ph).style.left = 0 + "px"
-                        zi -= 1
-                        s++
-                        window.setTimeout(drive, 20)
-                    }
-                }
-            } else {
-                stop()
+function drive() {
+    let ph = "p" + s
+    if (b === 1) {
+        if (s < 9) {
+            if (i === 1) {
+                zi = 7
+                i = 0
                 window.setTimeout(drive, 20)
+            } else {
+                if (k < 1000) {
+                    document.getElementById(ph).style.left = `${k}px`
+                    k += 10
+                    window.setTimeout(drive, 20)
+                } else {
+                    k = 0
+                    document.getElementById(ph).style.zIndex = zi
+                    document.getElementById(ph).style.left = 0 + "px"
+                    zi -= 1
+                    s++
+                    window.setTimeout(drive, 20)
+                }
             }
-
+        } else {
+            stop()
+            window.setTimeout(drive, 20)
         }
+
     }
+
 }
 
 function restart() {
