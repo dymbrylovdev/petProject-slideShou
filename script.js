@@ -5,7 +5,7 @@ window.onload = function () {
     document.getElementById("btn2").addEventListener("click", function () {
         start(2);
     })
-    document.getElementById("btn3").addEventListener("click", stop);
+    document.getElementById("btn3").addEventListener("click", restart);
 }
 
 
@@ -57,7 +57,7 @@ let zi = 7
 
 function drive(j) {
     if (j === 1) {
-        return false
+
     } else {
         let ph = "p" + s
         if (b === 1) {
@@ -66,7 +66,7 @@ function drive(j) {
                     zi = 7
                     i = 0
                     window.setTimeout(drive, 20)
-                } else {
+                }else {
                     if (k < 1000) {
                         document.getElementById(ph).style.left = `${k}px`
                         k += 10
@@ -89,9 +89,11 @@ function drive(j) {
     }
 }
 
+function restart() {
+    window.location.reload()
+}
 
 function stop() {
-    window.location.reload()
     a = 0;
     b = 0;
     zi = 15
